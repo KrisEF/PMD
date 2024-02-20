@@ -1,6 +1,5 @@
 <?php
-
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Drupal\Tests\drupaleasy_repositories\Traits;
 
@@ -11,14 +10,14 @@ use Drupal\node\Entity\NodeType;
 /**
  * Provides a helper method for creating a repository content type with fields.
  */
-trait RepositoryContentTypeTrait {
+trait RepositoryContentTypeTrait
+{
 
   /**
-   * Create a Repository content type.
-   *
-   * @throws \Drupal\Core\Entity\EntityStorageException
+   * Creates a repository content type with fields.
    */
-  protected function createRepositoryContentType(): void {
+  protected function createRepositoryContentType(): void
+  {
     NodeType::create(['type' => 'repository', 'name' => 'Repository'])->save();
 
     // Create Description field.
@@ -91,7 +90,7 @@ trait RepositoryContentTypeTrait {
       'label' => 'Source',
     ])->save();
 
-    // Create Link field.
+    // Create URL field.
     FieldStorageConfig::create([
       'field_name' => 'field_url',
       'type' => 'link',
@@ -102,8 +101,7 @@ trait RepositoryContentTypeTrait {
       'field_name' => 'field_url',
       'entity_type' => 'node',
       'bundle' => 'repository',
-      'label' => 'Link',
+      'label' => 'URL',
     ])->save();
   }
-
 }

@@ -1,4 +1,4 @@
 batman-repo:
-  label: The Batman repository
-  description: This is where Batman keeps all his crime-fighting code.
+  label: The Batman Repository
+  description: This is where Batman keeps all of his crime-fighting code.
   num_open_issues: 6
