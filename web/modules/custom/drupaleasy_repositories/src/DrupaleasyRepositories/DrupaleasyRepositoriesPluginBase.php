@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Drupal\drupaleasy_repositories;
+namespace Drupal\drupaleasy_repositories\DrupaleasyRepositories;
 
 use Drupal\Component\Plugin\PluginBase;
 
@@ -18,5 +18,20 @@ abstract class DrupaleasyRepositoriesPluginBase extends PluginBase implements Dr
     // Cast the label to a string since it is a TranslatableMarkup object.
     return (string) $this->pluginDefinition['label'];
   }
+
+  /**
+   * Default implementation to validate repository URLs.
+   *
+   * @param string $uri
+   *   The URI to validate.
+   *
+   * @return bool
+   *   Returns FALSE is not valid.
+   */
+  public function validate(string $uri): bool
+  {
+    return FALSE;
+  }
+
 
 }
